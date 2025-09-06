@@ -20,7 +20,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://blink-chat-xi.vercel.app", "http://localhost:5173"],
+    origin: [
+      "http://localhost:5173",                     // local dev
+      "https://blink-chat-xi.vercel.app",          // old vercel deploy
+      "https://blinkchat-frontend.netlify.app"     // ✅ Netlify deploy
+    ],
     credentials: true,
   })
 );
